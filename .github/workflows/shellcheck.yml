@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Run shellcheck
-        uses: actions/shellcheck-action@v1
+        uses: ludeeus/action-shellcheck@2.0.0
         with:
           shell: bash
           exclude: |
