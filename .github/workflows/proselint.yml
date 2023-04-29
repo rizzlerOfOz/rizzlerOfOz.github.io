@@ -1,20 +1,19 @@
-name: Prosellint
+---
+name: Proselint
 
 on:
   push:
+    branches: [main]
+  pull_request:
     branches: [main]
 
 jobs:
   proselint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Check out code
         uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
-      - name: Install proselint
-        run: pip install proselint
-      - name: Run proselint
+      - name: Install Proselint
+        run: sudo apt-get install -y proselint
+      - name: Run Proselint
         run: proselint **/*.md
